@@ -1,0 +1,15 @@
+1. Implement MPI_Bcast using MPI_Send from one rank to all others.
+2. Implement MPI_Bcast using MPI_Send from each rank to its right neighbour.
+3. Implement MPI_Bcast using MPI_Send and recursive doubling.
+4. Each rank, EXCEPT RANK 0, is to compute a set of k numbers. 
+    This k is random for each process. 
+    To simulate the process of generating k numbers, 
+    each process can use rand() k times to generate it and store it in an array of k integers. 
+    Rank 0 has to compute the average of all these numbers. 
+    At the end of their computation, each rank sends all its numbers to rank 0. 
+    Rank 0 will output the average of all the numbers as well as the order in which the other ranks completed their task.
+5. Write a simple MPI application to check if non-blocking MPI point-to-point calls are buffered or not.
+6. Let each process generate a random integer (using rand()). Rank 0 should compute the sum of all these numbers using MPI_Reduce.
+7. Let there be n processes. Let each process generate the ith row of a matrix (i = rank). Perform an MPI_Alltoall communication with these values. What does each process hold at the end of the communication?
+8. y=Ax - Matrix Vector multiplication. Let N be some fixed size. Let rank 0 generate a matrix A[N][N] and vector x[N], both integers (using rand()). Assume n processes such that n divides N without any remainder. Perform 1-D block partiotioning in terms of rows of A and compute y=Ax. At the end of the operation rank i should have its elements of the result vector y.
+
